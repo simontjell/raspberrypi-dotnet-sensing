@@ -3,7 +3,7 @@
 ## Installing .NET Core and other packages
 ```bash
 ./install-dotnet.sh
-``
+```
 
 
 ## Enabling I2C

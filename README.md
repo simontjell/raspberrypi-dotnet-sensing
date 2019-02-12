@@ -28,3 +28,18 @@ hostname -I
 
 In Windows Explorer, navigate to \\(IP address) and enter the credentials added to the Samba configuration.
 
+## Using dotnet-sshdeploy
+First, install the tool globally:
+´´´bash
+dotnet tool install -g dotnet-sshdeploy
+```
+
+Next, add the following (properly adjusted) to the first property group of the project file:
+```xml
+    <SshDeployHost>raspberrypi</SshDeployHost>
+    <SshDeployTargetPath>/home/pi/publish/web</SshDeployTargetPath>
+    <SshDeployUsername>pi</SshDeployUsername>
+    <SshDeployPassword>(your password)</SshDeployPassword>
+```
+
+

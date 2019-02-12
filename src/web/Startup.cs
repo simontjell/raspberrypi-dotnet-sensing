@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Unosquare.RaspberryIO;
+using Unosquare.WiringPi;
 
 namespace web
 {
@@ -20,6 +22,8 @@ namespace web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Pi.Init<BootstrapWiringPi>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -29,7 +33,7 @@ namespace web
             {
                 routes.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World! :-) [3.0]");
+                    await context.Response.WriteAsync(Pi.Info.ToString());
                 });
             });
         }

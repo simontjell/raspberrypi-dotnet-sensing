@@ -1,7 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+
+    <SshDeployHost>raspberrypi</SshDeployHost>
+    <SshDeployTargetPath>/home/pi/publish/web</SshDeployTargetPath>
+    <SshDeployUsername>pi</SshDeployUsername>
+    <SshDeployPassword>raspberry</SshDeployPassword>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\raspberryio-master\src\Unosquare.RaspberryIO\Unosquare.RaspberryIO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unosquare.WiringPi" Version="0.2.3" />
+  </ItemGroup>
 
 </Project>

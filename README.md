@@ -5,13 +5,13 @@
 ./install-dotnet.sh
 ```
 
-
-## Enabling I2C
+## Enabling I2C and the SSH daemon
 Start the configuration utility:
 ```bash
 sudo raspi-config
 ```
 Select point 5: "Interfacing options"
+Select point 2: "SSH" and "Yes" to enable the daemon to run at startup
 Select point 5: "I2C" and "Yes" to enable
 
 ## Setting up a Samba share

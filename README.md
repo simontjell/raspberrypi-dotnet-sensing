@@ -18,3 +18,13 @@ Select point 5: "I2C" and "Yes" to enable
 ```bash
 sudo leafpad /etc/samba/smb.conf
 ```
+(add a share for the 'pi' user)
+
+## Browsing files in Windows
+Get the IP address of the Raspberry PI device
+```bash
+hostname -I
+```
+
+In Windows Explorer, navigate to \\(IP address) and enter the credentials added to the Samba configuration.
+

@@ -26,7 +26,7 @@ Get the IP address of the Raspberry PI device
 hostname -I
 ```
 
-In Windows Explorer, navigate to \\(IP address) and enter the credentials added to the Samba configuration.
+In Windows Explorer, navigate to \\\\(IP address) and enter the credentials added to the Samba configuration.
 
 ## Using dotnet-sshdeploy
 First, install the tool globally:

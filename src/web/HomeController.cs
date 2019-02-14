@@ -41,6 +41,6 @@ namespace web
 
         [Route("status")]
         public IActionResult GetStatus()
-            => Ok(Pi.Info.ToString());
+            => Json(Pi.Info);
     }
 }

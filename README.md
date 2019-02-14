@@ -47,4 +47,8 @@ Deployment is done in the following way:
 dotnet-sshdeploy.exe push
 ```
 
-
+When deployment succeeds, the web app can be started in the Raspberry PI:
+```bash
+cd /home/pi/publish/web
+dotnet web.dll
+```

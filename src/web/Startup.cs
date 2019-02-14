@@ -17,25 +17,37 @@ namespace web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddMvc()
+                .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            Pi.Init<BootstrapWiringPi>();
+            if(env.IsProduction())
+            {
+                Pi.Init<BootstrapWiringPi>();
+            }
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting(routes =>
-            {
-                routes.MapGet("/", async context =>
+            app
+                //.UseRouting(routes =>
+                //{
+                //    routes.MapGet("/status", async context =>
+                //    {
+                //        await context.Response.WriteAsync(Pi.Info.ToString());
+                //    });
+                //})
+                .UseMvc(routes =>
                 {
-                    await context.Response.WriteAsync(Pi.Info.ToString());
-                });
-            });
+                    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                })
+            ;
         }
     }
 }

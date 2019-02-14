@@ -1,4 +1,4 @@
-# raspberrypi-dotnet-sensing
+﻿# raspberrypi-dotnet-sensing
 
 ## Installing .NET Core and other packages
 ```bash
@@ -40,6 +40,11 @@ Next, add the following (properly adjusted) to the first property group of the p
     <SshDeployTargetPath>/home/pi/publish/web</SshDeployTargetPath>
     <SshDeployUsername>pi</SshDeployUsername>
     <SshDeployPassword>(your password)</SshDeployPassword>
+```
+
+Deployment is done in the following way:
+```bash
+dotnet-sshdeploy.exe push
 ```
 
 

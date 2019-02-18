@@ -6,7 +6,7 @@
     <SshDeployHost>raspberrypi</SshDeployHost>
     <SshDeployTargetPath>/home/pi/publish/web</SshDeployTargetPath>
     <SshDeployUsername>pi</SshDeployUsername>
-    <SshDeployPassword>raspberry</SshDeployPassword>
+    <SshDeployPassword>RaspberryPiPassword (default: raspberry)</SshDeployPassword>
   </PropertyGroup>
 
   <ItemGroup>

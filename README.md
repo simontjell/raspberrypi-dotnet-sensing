@@ -30,7 +30,7 @@ In Windows Explorer, navigate to \\\\(IP address) and enter the credentials adde
 
 ## Using dotnet-sshdeploy
 First, install the tool globally:
-´´´bash
+```bash
 dotnet tool install -g dotnet-sshdeploy
 ```
 
